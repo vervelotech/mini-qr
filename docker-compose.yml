@@ -22,18 +22,19 @@ services:
     #   - ./nginx.conf:/etc/nginx/nginx.conf:ro
     # networks:
     #   - mini-qr-network
-
-  nginx-proxy:
-    image: nginx:alpine
-    container_name: nginx-proxy
     ports:
-      - 8890:80
-    restart: unless-stopped
-    volumes:
-      - ./nginx-proxy.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - mini-qr
-    # networks:
+      - 8890:8080
+  # nginx-proxy:
+  #   image: nginx:alpine
+  #   container_name: nginx-proxy
+  #   ports:
+  #     - 8890:80
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./nginx-proxy.conf:/etc/nginx/nginx.conf:ro
+  #   depends_on:
+  #     - mini-qr
+  #   # networks:
     #   - mini-qr-network
 
 # networks:
